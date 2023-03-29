@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e54def-0300-4ba0-97d5-2809110985ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="28e54def-0300-4ba0-97d5-2809110985ba" name="Changes" comment="tetst2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/base/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CreationTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,18 +17,39 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2NeikVm5lxer4yYuN6hBwtLPste" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-  </component>
-  <component name="RunManager" selected="JUnit.UserTests.deleteUser">
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.UserTests.checkUserAuthWithIncorrectData">
+    <configuration name="UserTests.checkCreateRepeatedUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_7" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserTests" />
+      <option name="METHOD_NAME" value="checkCreateRepeatedUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserTests.checkNewUserregister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_7" />
       <option name="PACKAGE_NAME" value="" />
@@ -53,32 +70,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTests.deleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTests.checkUserAuthWithIncorrectData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_7" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UserTests" />
-      <option name="METHOD_NAME" value="deleteUser" />
+      <option name="METHOD_NAME" value="checkUserAuthWithIncorrectData" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserTests.deleteUser" />
-        <item itemvalue="JUnit.UserTests.checkNewUserregister" />
+        <item itemvalue="JUnit.UserTests.checkUserAuthWithIncorrectData" />
+        <item itemvalue="JUnit.UserTests.checkCreateRepeatedUser" />
         <item itemvalue="JUnit.UserTests.checkUserAuth" />
+        <item itemvalue="JUnit.UserTests.checkNewUserregister" />
       </list>
     </recent_temporary>
   </component>
@@ -92,16 +99,5 @@
       <updated>1680031093467</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

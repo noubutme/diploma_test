@@ -5,18 +5,24 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import pojo.User;
-import static org.apache.http.HttpStatus.SC_FORBIDDEN;
+
+import static org.apache.http.HttpStatus.*;
 import static org.hamcrest.Matchers.equalTo;
-import static org.apache.http.HttpStatus.SC_OK;
 
 public class UserTests {
     private User user;
     private Register register;
 
+
+
     @Before
     public void setUp(){
         register = new Register();
-        user = new User("hf@mail.ru","123456","Nikita");
+        user = new User(RandomStringUtils.random(3)+"@mail.ru","123456","Nikita");
+    }
+    @After
+    public void deleteUser() {
+        register.delete();
     }
 
     @Test
@@ -54,11 +60,18 @@ public class UserTests {
                 .and()
                 .body("success",equalTo(true));
     }
+
     @Test
-    public void deleteUser(){
-        register.userAuth(user)
-                        .extract()
-                        .path("accessToken");
-        register.delete(user);
+    @DisplayName("Логин с неверным логином и паролем.")
+    public void checkUserAuthWithIncorrectData(){
+        register.createUser(user)
+                .assertThat()
+                .statusCode(SC_OK);
+        register.userAuth(new User(user.getEmail(), "1"))
+                .assertThat()
+                .statusCode(SC_UNAUTHORIZED)
+                .and()
+                .body("message",equalTo("email or password are incorrect"));
     }
+
 }
