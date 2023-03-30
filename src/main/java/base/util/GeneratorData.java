@@ -1,4 +1,4 @@
-package base.Util;
+package base.util;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import pojo.User;

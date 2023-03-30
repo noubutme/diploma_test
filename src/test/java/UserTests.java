@@ -1,6 +1,7 @@
 import base.UserBaseApi;
-import base.Util.GeneratorData;
+import base.util.GeneratorData;
 import io.qameta.allure.junit4.DisplayName;
+import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +13,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class UserTests {
     private User user;
     private UserBaseApi userBaseApi;
-
+    private String accessToken;
 
 
     @Before
@@ -75,10 +76,11 @@ public class UserTests {
     }
 
     @Test
-    @DisplayName("Изменение данных пользователя с авторизацией")
+    @DisplayName("Изменение данных пользователя с авторизацией: изменение пароля")
     public void editUserDateWithAuth(){
-        userBaseApi.registrateUser(user);
-        userBaseApi.setAccessToken();
+        ValidatableResponse response = userBaseApi.registrateUser(user);
+        accessToken = response.extract().path("accessToken").toString();
+        userBaseApi.setAccessToken(accessToken);
         user.setPassword(GeneratorData.generatePassword());
         userBaseApi.edit(user);
         userBaseApi.getUserInfo();
@@ -90,8 +92,12 @@ public class UserTests {
     }
 
     @Test
-    @DisplayName("Изменение данных пользователя с авторизацией")
+    @DisplayName("Изменение данных пользователя без авторизацией")
     public void editUserDateWithoutAuth(){
-
+        user.setPassword(GeneratorData.generatePassword());
+        userBaseApi.edit(user)
+                .assertThat()
+                .statusCode(SC_UNAUTHORIZED)
+                .body("message", equalTo("You should be authorised"));
     }
 }

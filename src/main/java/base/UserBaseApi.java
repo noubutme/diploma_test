@@ -4,15 +4,13 @@ import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import pojo.User;
-
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_ACCEPTED;
-import static org.apache.http.HttpStatus.SC_OK;
 
 public class UserBaseApi extends RestClient {
     private static final String Register_URI = RestClient.BASE_URI + "auth/register";
     private static final String Auth_URI = RestClient.BASE_URI + "auth/login";
-    private static final String Delite_URI = RestClient.BASE_URI + "auth/user";
+    private static final String User_URI = RestClient.BASE_URI + "auth/user";
 
     private Response response;
     private String accessToken;
@@ -29,8 +27,8 @@ public class UserBaseApi extends RestClient {
         return accessToken;
     }
 
-    public void setAccessToken() {
-        accessToken = response.then().extract().path("accessToken");
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 
     @Step("Регистарция пользователя")
@@ -39,11 +37,9 @@ public class UserBaseApi extends RestClient {
                 .spec(getReqSpec())
                 .body(user)
                 .post(Register_URI)
+                .then();
 
-                .then()
-                .assertThat()
-                .statusCode(SC_OK);
-    }
+                }
 
     @Step("Авторизация")
     public ValidatableResponse userAuth(User user){
@@ -60,7 +56,7 @@ public class UserBaseApi extends RestClient {
                 .spec(getReqSpec())
                 .header("Authorization",accessToken)
                 .when()
-                .get(Delite_URI);
+                .get(User_URI);
     }
     @Step("Удаление пользователя")
     public void delete() {
@@ -78,7 +74,6 @@ public class UserBaseApi extends RestClient {
     public ValidatableResponse edit(User user){
      return    given()
                 .spec(getReqSpec())
-                .header("Authorization",accessToken)
                 .body(user)
                 .when()
                 .patch("https://stellarburgers.nomoreparties.site/api/auth/user")

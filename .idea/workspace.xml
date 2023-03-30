@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28e54def-0300-4ba0-97d5-2809110985ba" name="Changes" comment="3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/base/Util/GeneratorData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/base/OrderBaseApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/EditDataTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/UserBaseApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CreateInvalideUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateInvalideUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/UserBaseApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/UserBaseApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/Util/GeneratorData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/util/GeneratorData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,12 +50,11 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/You/Desktop/Study/diploma_test&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.UserTests.editUserDateWithAuth">
-    <configuration name="CreateInvalideUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserTests.editUserDateWithoutAuth">
+    <configuration name="All in sprint_7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_7" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CreateInvalideUser" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -68,21 +68,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTests.checkUserAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTests.checkCreateRepeatedUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_7" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UserTests" />
-      <option name="METHOD_NAME" value="checkUserAuth" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTests.checkUserAuthWithIncorrectData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sprint_7" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserTests" />
-      <option name="METHOD_NAME" value="checkUserAuthWithIncorrectData" />
+      <option name="METHOD_NAME" value="checkCreateRepeatedUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -98,13 +88,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserTests.editUserDateWithoutAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_7" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserTests" />
+      <option name="METHOD_NAME" value="editUserDateWithoutAuth" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserTests.editUserDateWithoutAuth" />
         <item itemvalue="JUnit.UserTests.editUserDateWithAuth" />
-        <item itemvalue="JUnit.UserTests.checkUserAuth" />
-        <item itemvalue="JUnit.CreateInvalideUser" />
+        <item itemvalue="JUnit.All in sprint_7" />
+        <item itemvalue="JUnit.UserTests.checkCreateRepeatedUser" />
         <item itemvalue="JUnit.UserTests" />
-        <item itemvalue="JUnit.UserTests.checkUserAuthWithIncorrectData" />
       </list>
     </recent_temporary>
   </component>
