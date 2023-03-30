@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e54def-0300-4ba0-97d5-2809110985ba" name="Changes" comment="3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/base/OrderBaseApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/EditDataTest.java" afterDir="false" />
+    <list default="true" id="28e54def-0300-4ba0-97d5-2809110985ba" name="Changes" comment="Начал ордеры">
+      <change afterPath="$PROJECT_DIR$/src/test/java/orderTestsPack/OrderTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/OrderBaseApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/OrderBaseApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/base/UserBaseApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/UserBaseApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/Util/GeneratorData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/util/GeneratorData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateInvalideUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userTestsPack/CreateInvalideUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/EditDataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userTestsPack/EditDataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/userTestsPack/UserTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,14 +44,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/You/Desktop/Study/diploma_test&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/You/Desktop/Study/diploma_test",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.UserTests.editUserDateWithoutAuth">
+}]]></component>
+  <component name="RunManager" selected="JUnit.OrderTests.checkOrderWithAuth">
     <configuration name="All in sprint_7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_7" />
       <option name="PACKAGE_NAME" value="" />
@@ -59,19 +63,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderTests.checkOrderWithAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_7" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="orderTestsPack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="orderTestsPack" />
+      <option name="MAIN_CLASS_NAME" value="orderTestsPack.OrderTests" />
+      <option name="METHOD_NAME" value="checkOrderWithAuth" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="UserTests.checkCreateRepeatedUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_7" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserTests" />
+      <option name="PACKAGE_NAME" value="userTestsPack" />
+      <option name="MAIN_CLASS_NAME" value="userTestsPack.UserTests" />
       <option name="METHOD_NAME" value="checkCreateRepeatedUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -80,8 +91,8 @@
     </configuration>
     <configuration name="UserTests.editUserDateWithAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_7" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserTests" />
+      <option name="PACKAGE_NAME" value="userTestsPack" />
+      <option name="MAIN_CLASS_NAME" value="userTestsPack.UserTests" />
       <option name="METHOD_NAME" value="editUserDateWithAuth" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -90,8 +101,8 @@
     </configuration>
     <configuration name="UserTests.editUserDateWithoutAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_7" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserTests" />
+      <option name="PACKAGE_NAME" value="userTestsPack" />
+      <option name="MAIN_CLASS_NAME" value="userTestsPack.UserTests" />
       <option name="METHOD_NAME" value="editUserDateWithoutAuth" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -100,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserTests.editUserDateWithoutAuth" />
+        <item itemvalue="JUnit.OrderTests.checkOrderWithAuth" />
         <item itemvalue="JUnit.UserTests.editUserDateWithAuth" />
+        <item itemvalue="JUnit.UserTests.editUserDateWithoutAuth" />
         <item itemvalue="JUnit.All in sprint_7" />
         <item itemvalue="JUnit.UserTests.checkCreateRepeatedUser" />
-        <item itemvalue="JUnit.UserTests" />
       </list>
     </recent_temporary>
   </component>
@@ -124,11 +135,40 @@
       <option name="project" value="LOCAL" />
       <updated>1680122281745</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Начал ордеры">
+      <created>1680201178429</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680201178429</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="3" />
-    <option name="LAST_COMMIT_MESSAGE" value="3" />
+    <MESSAGE value="Начал ордеры" />
+    <option name="LAST_COMMIT_MESSAGE" value="Начал ордеры" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/orderTestsPack/OrderTests.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/orderTestsPack/OrderTests.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/orderTestsPack/OrderTests.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

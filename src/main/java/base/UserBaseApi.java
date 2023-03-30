@@ -6,6 +6,9 @@ import io.restassured.response.ValidatableResponse;
 import pojo.User;
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_ACCEPTED;
+import static org.apache.http.HttpStatus.SC_OK;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.notNullValue;
 
 public class UserBaseApi extends RestClient {
     private static final String Register_URI = RestClient.BASE_URI + "auth/register";
@@ -74,9 +77,14 @@ public class UserBaseApi extends RestClient {
     public ValidatableResponse edit(User user){
      return    given()
                 .spec(getReqSpec())
+                .header("Authorization",accessToken)
                 .body(user)
                 .when()
                 .patch("https://stellarburgers.nomoreparties.site/api/auth/user")
-                .then();
+                .then()
+             .statusCode(SC_OK)
+             .and()
+             .body("success",equalTo(true));
+
     }
 }

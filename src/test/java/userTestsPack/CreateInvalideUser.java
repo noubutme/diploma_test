@@ -1,3 +1,5 @@
+package userTestsPack;
+
 import base.UserBaseApi;
 import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
