@@ -4,15 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e54def-0300-4ba0-97d5-2809110985ba" name="Changes" comment="tetst2">
+    <list default="true" id="28e54def-0300-4ba0-97d5-2809110985ba" name="Changes" comment="3">
+      <change afterPath="$PROJECT_DIR$/src/main/java/base/Util/GeneratorData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/base/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/UserBaseApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateInvalideUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateInvalideUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,26 +45,25 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/You/Desktop/Study/diploma_test&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.UserTests.checkUserAuthWithIncorrectData">
-    <configuration name="UserTests.checkCreateRepeatedUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserTests.editUserDateWithAuth">
+    <configuration name="CreateInvalideUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_7" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserTests" />
-      <option name="METHOD_NAME" value="checkCreateRepeatedUser" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="CreateInvalideUser" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTests.checkNewUserregister" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_7" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UserTests" />
-      <option name="METHOD_NAME" value="checkNewUserregister" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -80,12 +88,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserTests.editUserDateWithAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_7" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserTests" />
+      <option name="METHOD_NAME" value="editUserDateWithAuth" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserTests.checkUserAuthWithIncorrectData" />
-        <item itemvalue="JUnit.UserTests.checkCreateRepeatedUser" />
+        <item itemvalue="JUnit.UserTests.editUserDateWithAuth" />
         <item itemvalue="JUnit.UserTests.checkUserAuth" />
-        <item itemvalue="JUnit.UserTests.checkNewUserregister" />
+        <item itemvalue="JUnit.CreateInvalideUser" />
+        <item itemvalue="JUnit.UserTests" />
+        <item itemvalue="JUnit.UserTests.checkUserAuthWithIncorrectData" />
       </list>
     </recent_temporary>
   </component>
@@ -98,6 +117,18 @@
       <option name="presentableId" value="Default" />
       <updated>1680031093467</updated>
     </task>
+    <task id="LOCAL-00001" summary="3">
+      <created>1680122281745</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680122281745</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="3" />
+    <option name="LAST_COMMIT_MESSAGE" value="3" />
   </component>
 </project>

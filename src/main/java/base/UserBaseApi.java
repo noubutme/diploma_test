@@ -7,8 +7,9 @@ import pojo.User;
 
 import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_ACCEPTED;
+import static org.apache.http.HttpStatus.SC_OK;
 
-public class Register extends RestClient {
+public class UserBaseApi extends RestClient {
     private static final String Register_URI = RestClient.BASE_URI + "auth/register";
     private static final String Auth_URI = RestClient.BASE_URI + "auth/login";
     private static final String Delite_URI = RestClient.BASE_URI + "auth/user";
@@ -32,13 +33,16 @@ public class Register extends RestClient {
         accessToken = response.then().extract().path("accessToken");
     }
 
-    @Step("Создание пользователя")
-    public ValidatableResponse createUser(User user){
+    @Step("Регистарция пользователя")
+    public ValidatableResponse registrateUser(User user){
         return given()
                 .spec(getReqSpec())
                 .body(user)
                 .post(Register_URI)
-                .then();
+
+                .then()
+                .assertThat()
+                .statusCode(SC_OK);
     }
 
     @Step("Авторизация")
@@ -69,5 +73,15 @@ public class Register extends RestClient {
                 .then()
                 .statusCode(SC_ACCEPTED);
         System.out.println(getAccessToken());
+    }
+    @Step("Изменение данных пользователя")
+    public ValidatableResponse edit(User user){
+     return    given()
+                .spec(getReqSpec())
+                .header("Authorization",accessToken)
+                .body(user)
+                .when()
+                .patch("https://stellarburgers.nomoreparties.site/api/auth/user")
+                .then();
     }
 }
