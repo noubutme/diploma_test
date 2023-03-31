@@ -3,6 +3,7 @@ package base;
 import base.util.GeneratorData;
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
+import org.apache.commons.lang3.RandomStringUtils;
 import pojo.User;
 import static io.restassured.RestAssured.given;
 public class UserStepsApi extends RestClient{
@@ -31,7 +32,7 @@ public class UserStepsApi extends RestClient{
 
     @Step("Редактирование данных с авторизацией")
      public ValidatableResponse editWithAuth(String accessToken,User user){
-        return given()
+        return  given()
                 .spec(getReqSpec())
                 .auth().oauth2(accessToken)
                 .body(user)

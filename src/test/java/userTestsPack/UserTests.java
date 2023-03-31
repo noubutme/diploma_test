@@ -78,15 +78,15 @@ public class UserTests {
                 .and()
                 .body("message",equalTo("email or password are incorrect"));
     }
-
-@Test
-    @DisplayName("Изменение данных пользователя с авторизацией")
+    @Tag("Работает")
+    @Test
+    @DisplayName("Изменение данных пользователя без авторизацией")
     public void editUserWithAuth(){
-    ValidatableResponse response = userStepsApi.userRegister(testUser);
-    accessToken = response.extract().path("accessToken").toString();
-    testUser.setEmail(GeneratorData.generateEmail());
-    userStepsApi.editWithAuth(accessToken,testUser)
-            .assertThat()
-            .statusCode(SC_OK);
+        userStepsApi.userRegister(testUser);
+        userStepsApi.editWithAuth("",testUser)
+                .assertThat()
+                .statusCode(401)
+                .and()
+                .body("message",equalTo("You should be authorised"));
 }
 }
