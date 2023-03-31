@@ -1,6 +1,6 @@
 package userTestsPack;
 
-import base.UserBaseApi;
+import base.UserStepsApi;
 import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
@@ -13,7 +13,7 @@ import static org.apache.http.HttpStatus.SC_FORBIDDEN;
 
 @RunWith(Parameterized.class)
 public class CreateInvalideUser {
-    private UserBaseApi userBaseApi;
+    private UserStepsApi userStepsApi;
     private User user;
 
     public CreateInvalideUser(User user){
@@ -30,13 +30,13 @@ public class CreateInvalideUser {
 
     @Before
     public void setUp(){
-        userBaseApi =new UserBaseApi();
+        userStepsApi =new UserStepsApi();
     }
 
     @Test
     @DisplayName("Создание пользователя без одного из парамметров")
     public void checkCreateCourierWithoutOneParameter(){
-        userBaseApi.registrateUser(user)
+        userStepsApi.userRegister(user)
                 .assertThat()
                 .statusCode(SC_FORBIDDEN)
                 .and()

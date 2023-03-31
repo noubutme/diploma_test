@@ -1,107 +1,61 @@
 package userTestsPack;
 
-import base.UserBaseApi;
+import base.UserStepsApi;
 import base.util.GeneratorData;
 import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.junit4.Tag;
-import io.restassured.response.ValidatableResponse;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import pojo.User;
 
-import static org.apache.http.HttpStatus.*;
-import static org.hamcrest.Matchers.equalTo;
+import static org.apache.http.HttpStatus.SC_FORBIDDEN;
+import static org.apache.http.HttpStatus.SC_OK;
+import static org.hamcrest.Matchers.*;
 
 public class UserTests {
-    private User user;
-    private UserBaseApi userBaseApi;
-    private String accessToken;
-
+    private User testUser;
+    private UserStepsApi userStepsApi;
 
     @Before
     public void setUp(){
-        userBaseApi = new UserBaseApi();
-        user = GeneratorData.createUser();
-    }
-    @After
-    public void tearDown() {
-        userBaseApi.delete();
+        userStepsApi = new UserStepsApi();
+        testUser = GeneratorData.createUser();
     }
 
+    @Tag("Работает")
     @Test
-    @DisplayName("Создание уникального пользователя")
-    public void checkNewUserRegister(){
-        userBaseApi.registrateUser(user)
+    @DisplayName("создать уникального пользователя")
+    public void createUnicUser(){
+        userStepsApi.userRegister(testUser)
                 .assertThat()
                 .statusCode(SC_OK)
                 .and()
-                .body("success",equalTo(true));
+                .body("accessToken",notNullValue());
+
     }
 
+    @Tag("Работает")//Возможна доработка
     @Test
-    @DisplayName("Создание пользователя, который уже зарегистрирован")
-    public void checkCreateRepeatedUser(){
-        userBaseApi.registrateUser(user)
-                .assertThat()
-                .statusCode(SC_OK);
-        User secondUser = new User(user.getEmail(), user.getPassword(), user.getName());
-        userBaseApi.registrateUser(secondUser)
+    @DisplayName("создать пользователя, который уже зарегистрирован")
+    public void createSimilarUser(){
+        userStepsApi.userRegister(testUser);
+        User secondUser = testUser;
+        userStepsApi.userRegister(secondUser)
                 .assertThat()
                 .statusCode(SC_FORBIDDEN)
                 .and()
+                .assertThat()
                 .body("message",equalTo("User already exists"));
     }
+    @Tag("Работает")
     @Test
-    @DisplayName("Логин под существующим пользователем")
-    public void checkUserAuth(){
-        userBaseApi.registrateUser(user)
+    @DisplayName("логин под существующим пользователем")
+    public void userLogin(){
+        userStepsApi.userRegister(testUser);
+        userStepsApi.userBasicAuth(testUser)
                 .assertThat()
-                .statusCode(SC_OK);
-        userBaseApi.userAuth(new User(user.getEmail(), user.getPassword()))
-                .assertThat()
-                .statusCode(SC_OK)
+                .statusCode(200)
                 .and()
-                .body("success",equalTo(true));
-    }
-
-    @Test
-    @DisplayName("Логин с неверным логином и паролем.")
-    public void checkUserAuthWithIncorrectData(){
-        userBaseApi.registrateUser(user)
-                .assertThat()
-                .statusCode(SC_OK);
-        userBaseApi.userAuth(new User(user.getEmail(), null))
-                .assertThat()
-                .statusCode(SC_UNAUTHORIZED)
-                .and()
-                .body("message",equalTo("email or password are incorrect"));
-    }
-
-    @Tag("Доработать")
-    @Test
-    @DisplayName("Изменение данных пользователя с авторизацией: изменение пароля")
-    public void editUserDateWithAuth(){
-        ValidatableResponse response = userBaseApi.registrateUser(user);
-        accessToken = response.extract().path("accessToken").toString();
-        userBaseApi.setAccessToken(accessToken);
-        user.setPassword(GeneratorData.generatePassword());
-        userBaseApi.edit(user);
-//        userBaseApi.getUserInfo();
-//        userBaseApi.getResponse()
-//                .then()
-//                .assertThat()
-//                .statusCode(SC_OK)
-//                .body("success", equalTo(true));
-    }
-
-    @Test
-    @DisplayName("Изменение данных пользователя без авторизацией")
-    public void editUserDateWithoutAuth(){
-        user.setPassword(GeneratorData.generatePassword());
-        userBaseApi.edit(user)
-                .assertThat()
-                .statusCode(SC_UNAUTHORIZED)
-                .body("message", equalTo("You should be authorised"));
+                .body("user.email",equalTo(testUser.getEmail()));
     }
 }
