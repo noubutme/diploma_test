@@ -30,6 +30,16 @@ public class UserStepsApi extends RestClient{
                 .then();
     }
 
+//    @Step("Авторизация по токену")
+//    public ValidatableResponse userBasicAuth(String accessToken){
+//        return given()
+//                .spec(getReqSpec())
+//                .auth().oauth2(accessToken)
+//                .when()
+//                .post(Auth_URL)
+//                .then();
+//    }
+
     @Step("Редактирование данных с авторизацией")
      public ValidatableResponse editWithAuth(String accessToken,User user){
         return  given()

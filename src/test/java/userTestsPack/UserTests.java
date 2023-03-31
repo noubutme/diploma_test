@@ -25,9 +25,9 @@ public class UserTests {
     }
     @After
     public void tearDown(){
-        ValidatableResponse response = userStepsApi.userBasicAuth(testUser);
-        accessToken = response.extract().path("accessToken").toString();
-        userStepsApi.delite(accessToken);
+        if (accessToken==null){
+            return;
+        }else userStepsApi.delite(accessToken);
     }
 
     @Tag("Работает")
@@ -78,11 +78,12 @@ public class UserTests {
                 .and()
                 .body("message",equalTo("email or password are incorrect"));
     }
-    @Tag("Работает")
+    @Tag("Кривоо")
     @Test
     @DisplayName("Изменение данных пользователя без авторизацией")
     public void editUserWithAuth(){
         userStepsApi.userRegister(testUser);
+        testUser.setEmail(GeneratorData.generateEmail());
         userStepsApi.editWithAuth("",testUser)
                 .assertThat()
                 .statusCode(401)
