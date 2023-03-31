@@ -4,22 +4,30 @@ import base.UserStepsApi;
 import base.util.GeneratorData;
 import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.junit4.Tag;
+import io.restassured.response.ValidatableResponse;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import pojo.User;
 
-import static org.apache.http.HttpStatus.SC_FORBIDDEN;
-import static org.apache.http.HttpStatus.SC_OK;
+import static org.apache.http.HttpStatus.*;
 import static org.hamcrest.Matchers.*;
 
 public class UserTests {
     private User testUser;
     private UserStepsApi userStepsApi;
+    private String accessToken;
 
     @Before
     public void setUp(){
         userStepsApi = new UserStepsApi();
         testUser = GeneratorData.createUser();
+    }
+    @After
+    public void tearDown(){
+        ValidatableResponse response = userStepsApi.userBasicAuth(testUser);
+        accessToken = response.extract().path("accessToken").toString();
+        userStepsApi.delite(accessToken);
     }
 
     @Tag("Работает")
@@ -58,4 +66,27 @@ public class UserTests {
                 .and()
                 .body("user.email",equalTo(testUser.getEmail()));
     }
+
+    @Tag("Работает")
+    @Test
+    @DisplayName("логин с неверным логином и паролем")
+    public void invalidLogin(){
+        userStepsApi.userRegister(testUser);
+        userStepsApi.userBasicAuth(new User(testUser.getEmail(),null))
+                .assertThat()
+                .statusCode(SC_UNAUTHORIZED)
+                .and()
+                .body("message",equalTo("email or password are incorrect"));
+    }
+
+@Test
+    @DisplayName("Изменение данных пользователя с авторизацией")
+    public void editUserWithAuth(){
+    ValidatableResponse response = userStepsApi.userRegister(testUser);
+    accessToken = response.extract().path("accessToken").toString();
+    testUser.setEmail(GeneratorData.generateEmail());
+    userStepsApi.editWithAuth(accessToken,testUser)
+            .assertThat()
+            .statusCode(SC_OK);
+}
 }

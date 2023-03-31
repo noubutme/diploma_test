@@ -8,7 +8,7 @@ public class GeneratorData {
     private static String password;
     private static String name;
     public static String generateEmail(){
-        return email = RandomStringUtils.random(3)+"@mail.ru";
+        return email = RandomStringUtils.random(8)+"@mail.ru";
     }
     public static String generatePassword(){
         return password = RandomStringUtils.random(8);
